@@ -59,5 +59,5 @@ def _extract_tags(html):
                 tag += html[i]
                 i += 1
             tag += ">"
-         l.append(tag)
+            l.append(tag)
      return l
