@@ -52,7 +52,7 @@ def _extract_tags(html):
         if html[x] == "<":
             i = x
             tag = ""
-            tag += "<"
+            tag += ""
             while html[i] != ">":
                 tag += html[i]
                 i += 1
