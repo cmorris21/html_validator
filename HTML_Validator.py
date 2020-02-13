@@ -14,7 +14,7 @@ def validate_html(html):
     l = []
     balanced = True
     for i in range(len(html)):
-        symbol = html[i]
+        symbol = string[i]
         if "\" not in symbol:
             l.append(symbol)
         else:
