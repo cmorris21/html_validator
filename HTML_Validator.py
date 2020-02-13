@@ -13,9 +13,9 @@ def validate_html(html):
     string = _extract_tags(html)
     l = []
     balanced = True
-    for i in range(len(html)):
+    for i in range(len(string)):
         symbol = string[i]
-        if "\" not in symbol:
+        if "/" not in symbol:
             l.append(symbol)
         else:
             if l == []:
@@ -50,9 +50,9 @@ def _extract_tags(html):
     ['<strong>', '</strong>']
     '''
     l = []
-    for i in range(len(html)):
-        if html[i] == "<":
-            x = i
+    for x in range(len(html)):
+        if html[x] == "<":
+            i = x
             tag = ""
             tag += "<"
             while html[x] != ">":
