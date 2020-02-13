@@ -53,7 +53,7 @@ def _extract_tags(html):
             i = x
             tag = ""
             tag += "<"
-            while html[x] != ">":
+            while html[i] != ">":
                 tag += html[i]
                 i += 1
             tag += ">"
