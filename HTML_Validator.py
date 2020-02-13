@@ -10,21 +10,20 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
-    
+    string = _extract_tags(html)
     l = []
     balanced = True
     for i in range(len(html)):
         symbol = html[i]
-        if symbol i "<":
+        if "\" not in symbol:
             l.append(symbol)
         else:
             if l == []:
                 balanced = False
             else:
                 top =l.pop()
-                if not _extract_tags(html):
+                if top[1:]!=symbol[2:]:
                     balanced = False
-        i += 1
     if balanced and l == []:
         return True
     else:
