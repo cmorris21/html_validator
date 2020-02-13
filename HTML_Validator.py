@@ -60,4 +60,4 @@ def _extract_tags(html):
                 i += 1
             tag += ">"
             l.append(tag)
-     return l
+    return l
