@@ -1,5 +1,5 @@
 #!/bin/python3
-
+import pandas as pd
 
 def validate_html(html):
     '''
@@ -10,7 +10,28 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
-
+    
+    l = []
+    balanced = True
+    for i in range(len(html)):
+        symbol = html[i]
+        if symbol i "<":
+            l.append(symbol)
+        else:
+            if l == []:
+                balanced = False
+            else:
+                top =l.pop()
+                if not _extract_tags(html):
+                    balanced = False
+        i += 1
+    if balanced and l == []:
+        return True
+    else:
+        retun False
+        
+        
+        
     # HINT:
     # use the _extract_tags function below to generate a list of html tags without any extra text;
     # then process these html tags using the balanced parentheses algorithm from the book
@@ -29,3 +50,15 @@ def _extract_tags(html):
     >>> _extract_tags('Python <strong>rocks</strong>!')
     ['<strong>', '</strong>']
     '''
+    l = []
+    for i in range(len(html)):
+        if html[i] == "<":
+            x = i
+            tag = ""
+            tag += "<"
+            while html[x] != ">":
+                tag += html[i]
+                i += 1
+            tag += ">"
+         l.append(tag)
+     return l
